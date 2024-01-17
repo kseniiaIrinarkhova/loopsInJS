@@ -15,20 +15,21 @@ console.log(`
 ************************
 `);
 
+//Loop through all numbers from 1 to 100.
 for (let i = 0; i <= 100; i++) {
-    if (i%3 === 0 && i%5 === 0){
+    if (i % 3 === 0 && i % 5 === 0) { //firstly check that number is divisible both by 3 and 5
         console.log("Fizz Buzz.");
     }
-    else if (i % 3 === 0){
+    else if (i % 3 === 0) { //check if number is divisible by 3
         console.log("Fizz.");
     }
-    else if (i % 5 === 0){
+    else if (i % 5 === 0) { //check if number is divisible by 5
         console.log("Buzz.");
     }
-    else{
+    else { //all other numbers
         console.log(i);
     };
-    
+
 }
 
 /**
@@ -45,3 +46,25 @@ console.log(`
 ***Part 2: Prime Time***
 ************************
 `);
+
+let n = 35; //declare arbitrary number
+
+console.log(`Arbitrary number: ${n}`);
+
+//as we don't know how long would be loop make endless one's
+PrimeNumberFounder: while (true) {
+    n++; //take the next number - it is inspected number
+
+    //we need to check if it is a prime number. 
+    for (let i = n - 1; i > 1; i--) {
+        //we found a divider of inspected number
+        if (n % i === 0) {
+            //inspected number is not a prime one. stop inspection, take next number   
+            continue PrimeNumberFounder;
+        }
+    }
+    //we don't find any dividers. it's our prime number!
+    console.log(n);
+    break;
+
+}
