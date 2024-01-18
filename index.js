@@ -56,7 +56,8 @@ PrimeNumberFounder: while (true) {
     n++; //take the next number - it is inspected number
 
     //we need to check if it is a prime number. 
-    for (let i = n - 1; i > 1; i--) {
+    //we need to check first half of numbers, because you can't get integer if divide number by bigger than it half 
+    for (let i = 2; i < (n-1)/2; i++) {
         //we found a divider of inspected number
         if (n % i === 0) {
             //inspected number is not a prime one. stop inspection, take next number   
